@@ -75,7 +75,7 @@ def image_recognition(image, api_key):
 
 
 with gr.Blocks() as demo:
-    gr.Markdown("銀行存摺帳號識別")
+    gr.Markdown("醫院收據")
     with gr.Tab("請依順序操作"):
         with gr.Row():
             file_input = gr.File(label="第一步：請上傳檔案")
@@ -84,9 +84,9 @@ with gr.Blocks() as demo:
             )
             submit_button = gr.Button("第三步：開始識別")
         with gr.Row():
-            qname = gr.Textbox(label="銀行名字", value="")
-            qfee = gr.Textbox(label="帳號", value="")
-            qdate = gr.Textbox(label="戶名", value="")
+            qname = gr.Textbox(label="醫院名字", value="")
+            qfee = gr.Textbox(label="患者名稱", value="")
+            qdate = gr.Textbox(label="時間", value="")
 
     submit_button.click(
         image_recognition,
